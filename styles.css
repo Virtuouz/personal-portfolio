@@ -17,6 +17,8 @@
   --fw-400: 400;
   --fw-700: 700;
   --fw-900: 900;
+  
+  --shadow-simple:rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
 
 body {
@@ -26,7 +28,6 @@ body {
   color: var(--clr-neutral-400);
   background-color: var(--clr-neutral-200);
   height: 100vh;
-
 }
 
 /* p{
@@ -48,6 +49,7 @@ h3 {
 .lt-sequential {
     min-height: 100%;
     display: grid;
+    row-gap: 4rem;
     grid-template-columns: minmax(0,1fr) minmax(0,1250px) minmax(0,1fr);
     grid-auto-rows: 1fr;
     /* 1fr max width 500px 1fr */
@@ -113,9 +115,15 @@ h3 {
     background-color: var(--clr-primary-400);
 }
 
+.paddinglr-1{
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
 .margin-1 {
   margin: 1rem;
 }
+
 
 .margin-fluid{
     margin-left: clamp(1rem,5%,3rem);
@@ -134,17 +142,62 @@ h3 {
     max-width: 1500px;
 }
 
+.float-left{
+    float: left;
+}
+
+.display-block{
+    display: block;
+}
+
+.flex-row{
+    display: flex;
+    flex-direction: row;
+}
+
 /* Blocks */
 
 .about-me{
     grid-row: 1/2;
     grid-column: 2/3;
+    /* width: 20rem; */
 }
 
-.projects{
+.about-me-content{
+    padding: 2rem;
+    align-self: center;
+    width: 100%;
+    height: 25rem;
+
+}
+
+.about-me img{
+    display: block;
+    float: left;
+    
+}
+
+.main{
     grid-row: 2/3;
     grid-column: 2/3;
 
+}
+
+.projects{
+    display: grid;
+    gap: 2rem 2rem;
+    grid-template-columns: repeat(auto-fit,minmax(350px,1fr));
+
+}
+
+.projects img{
+    height: 15rem;
+    width: 100%;
+    background-color: black;
+}
+
+.project-card{
+    box-shadow: var(--shadow-simple);
 }
 
 .footer-l{
