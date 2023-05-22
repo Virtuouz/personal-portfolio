@@ -1,3 +1,13 @@
+/* CUBE css methodlogy was used for this project
+Globals
+Composition
+Utilities
+Blocks
+Exceptions 
+
+Naming is inconsistent, I am still figuring out my naming convention for my projects*/
+
+
 /* Globals */
 
 :root {
@@ -11,7 +21,7 @@
   --clr-primary-400: hsl(200, 75%, 40%);
 
   --fs-300: 0.8rem;
-  --fs-400: 1rem;
+  --fs-400: clamp(1rem, calc(1rem + .1vw), 1.3rem);
   --fs-700: 1.75;
 
   --fw-400: 400;
@@ -115,6 +125,10 @@ h3 {
     background-color: var(--clr-primary-400);
 }
 
+.padding-2{
+    padding: 2rem;
+}
+
 .paddinglr-1{
     padding-left: 1rem;
     padding-right: 1rem;
@@ -155,6 +169,10 @@ h3 {
     flex-direction: row;
 }
 
+.radius-2{
+    border-radius: 10px;
+}
+
 /* Blocks */
 
 .about-me{
@@ -163,16 +181,45 @@ h3 {
     /* width: 20rem; */
 }
 
+.about-me-container{
+    display: flex;
+    flex-direction: row; 
+}
+
+@media (max-width:1000px){
+    .about-me-container{
+
+        display: inline;
+    }
+
+    .about-me-content{
+        padding: 2rem;
+        /* height: max(25rem,min-content); */
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .about-me img{
+        float: left;
+        margin-right: 1rem;
+        margin-bottom: 1rem;
+        
+    }
+
+}
+
 .about-me-content{
     padding: 2rem;
+    margin-left: 2;
     align-self: center;
-    width: 100%;
-    height: 25rem;
+    height: max(25rem,min-content);
+    padding-left: 1rem;
+    padding-right: 1rem;
+    text-align: justify;
 
 }
 
 .about-me img{
-    display: block;
     float: left;
     
 }
@@ -208,6 +255,14 @@ h3 {
 .footer{
     grid-row: 3/4;
     grid-column: 2/3;
+}
+
+.footer-content{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 2rem;
+    flex-wrap: wrap;
 }
 
 .footer-r{
