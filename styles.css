@@ -173,6 +173,10 @@ h3 {
     border-radius: 10px;
 }
 
+.contain{
+    object-fit: contain;
+}
+
 /* Blocks */
 
 .about-me{
@@ -184,28 +188,7 @@ h3 {
 .about-me-container{
     display: flex;
     flex-direction: row; 
-}
-
-@media (max-width:1000px){
-    .about-me-container{
-
-        display: inline;
-    }
-
-    .about-me-content{
-        padding: 2rem;
-        /* height: max(25rem,min-content); */
-        padding-left: 1rem;
-        padding-right: 1rem;
-    }
-
-    .about-me img{
-        float: left;
-        margin-right: 1rem;
-        margin-bottom: 1rem;
-        
-    }
-
+    
 }
 
 .about-me-content{
@@ -216,13 +199,19 @@ h3 {
     padding-left: 1rem;
     padding-right: 1rem;
     text-align: justify;
+    box-shadow: var(--shadow-simple);
 
 }
 
 .about-me img{
-    float: left;
-    
+    object-fit: fill;
+
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+
 }
+
+
 
 .main{
     grid-row: 2/3;
@@ -233,7 +222,7 @@ h3 {
 .projects{
     display: grid;
     gap: 2rem 2rem;
-    grid-template-columns: repeat(auto-fit,minmax(350px,1fr));
+    grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
 
 }
 
@@ -261,7 +250,6 @@ h3 {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding: 2rem;
     flex-wrap: wrap;
 }
 
@@ -273,4 +261,52 @@ h3 {
 /* Exceptions */
 h2[data-type="neutral"]{
     color: var(--clr-neutral-100);
+}
+
+
+@media (min-width:750px) and (max-width:950px){
+    .about-me-container{
+
+        display: inline-block;
+    }
+
+    .about-me-content{
+        padding: 2rem;
+        /* height: max(25rem,min-content); */
+        padding-left: 1rem;
+        padding-right: 1rem;
+        margin-top: 10rem;
+        margin-left: 5rem;
+    }
+
+    .about-me img{
+        display: inline;
+        float: left;
+        margin-bottom: 1rem;
+        object-fit: contain;
+        margin-right: 1rem;
+        margin-bottom: 1rem;
+        
+    }
+
+}
+
+@media (max-width:749px){
+
+    .margin-fluid{
+        margin-left: clamp(.5rem,3%,3rem);
+        margin-right: clamp(.5rem,3%,3rem);
+    }
+
+    .about-me-container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+    }
+
+    .about-me img{
+        float: none;
+    }
+    
 }

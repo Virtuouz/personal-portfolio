@@ -12,7 +12,12 @@
     <section class="about-me | margin-fluid">
       <h1>Giovanni Plascencia</h1>
       <div class="about-me-container">
+        <picture >
+          <source media="(max-width: 450px)" srcset="./img/GP-crop-300.jpg">
+          <source media="(max-width: 949px)" srcset="./img/GP-crop-400.jpg">
+          <source media="(min-width: 950px)" srcset="./img/GP-400.jpg">
           <img class="radius-2" src="./img/GP-400.jpg" alt="" />
+        </picture>
         <div class="about-me-content bg-neutral-100">
           <h2>About Me</h2>
           <p>
@@ -145,8 +150,11 @@
             <p>email@email.com</p>
             <div>svg svg svg</div>
           </div>
-          <img class="radius-2" src="./img/GP-crop-400.jpg" alt="" />
-          <!-- at tablet size trigger 200 width -->
+          <picture class="radius-2">
+            <source media="(max-width: 450px)" srcset="./img/GP-300.jpg">
+            <source media="(min-width: 950px)" srcset="./img/GP-400.jpg">
+            <img class="radius-2" src="./img/GP-400.jpg" alt="" />
+          </picture>
         </div>
       </div>
     </footer>
