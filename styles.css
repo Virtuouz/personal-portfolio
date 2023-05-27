@@ -169,6 +169,10 @@ h3 {
     flex-direction: row;
 }
 
+.space-between{
+    justify-content: space-between;
+}
+
 .radius-2{
     border-radius: 10px;
 }
@@ -179,6 +183,10 @@ h3 {
 
 .pos-relative{
     position: relative;
+}
+
+.text-deco-none{
+    text-decoration: none;
 }
 
 /* Blocks */
@@ -260,6 +268,11 @@ h3 {
 
 }
 
+.projects svg{
+    width: 2rem;
+    height: 2rem;
+}
+
 .projects img{
     height: 15rem;
     width: 100%;
@@ -278,6 +291,11 @@ h3 {
 .footer{
     grid-row: 3/4;
     grid-column: 2/3;
+}
+
+.footer svg{
+    width: 4rem;
+    height: 4rem;
 }
 
 .footer-content{
